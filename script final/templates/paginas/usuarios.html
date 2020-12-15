@@ -1,0 +1,37 @@
+{% extends 'layouts/base.html' %} {% block title %} Usuarios {% endblock %} {% block content %}
+<h1 id="heading">Usuarios</h1>
+<style>
+    #heading {
+        color: #ffffff;
+    }
+</style>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>E-mail</th>
+            <th>Contraseña</th>
+            <th>Acción</th>
+
+        </tr>
+    </thead>
+    <tbody>{% for lista in usuarios %}
+        <tr>
+            <td>{{ lista[0] }}</td>
+            <td>{{ lista[1] }}</td>
+            <td>{{ lista[2] }}</td>
+            <td>{{ lista[3] }}</td>
+            <div class="title-page">
+                <td>
+                    <center>
+                        <button class="btn btn-success "><a href="{{ url_for( 'editar_usua') }} " >Editar</a></button>
+                        <button class="btn btn-danger "><a href="{{ url_for( 'eliminar_usua') }} " >Eliminar</a></button>
+                    </center>
+                </td>
+            </div>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

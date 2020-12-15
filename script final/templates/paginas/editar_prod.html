@@ -1,0 +1,28 @@
+{% extends 'layouts/base.html' %} {% block title %} Editar Producto {% endblock %} {% block content %}
+<style>
+    #heading {
+        color: #ffffff;
+    }
+</style>
+<form action="{{ url_for('editar_prod') }}" method="POST">
+    <h1 id="heading">Crear productos</h1>
+    <div class="form-group  footer-page" id="contenido2">
+        <label id="heading" for="e_id">ID</label>
+        <input type="text" id="e_id" name="e_id">
+        <label id="heading" for="e_nombre">Nombre</label>
+        <input required type="text" id="Nombre" name="e_nombre">
+        <label id="heading" for="e_precio">Precio</label>
+        <input type="text" id="e_precio" name="e_precio">
+    </div>
+    <select class="container" name="e_categoria">
+        {%for Categorias in Categorias %}
+        <option value="{{Categorias[1]}}">{{Categorias[1]}}</option>
+        {%endfor%}
+    </select>
+    <center>
+        <button type="submit" class="btn btn-success">Guardar</button>
+        <button class="btn btn-info"><a href="{{ url_for('productos') }}" >Volver</a></button>
+    </center>
+</form>
+
+{% endblock %}

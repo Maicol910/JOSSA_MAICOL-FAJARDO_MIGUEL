@@ -1,0 +1,30 @@
+{% extends 'layouts/baseinicio.html' %} {% block title %} Inicio De Sesión {% endblock %} {% block content %}
+<form action="{{ url_for('registrarse') }}" method="POST" class="formulario">
+    <h1>Registrarse</h1>
+    <div class="contenedor">
+        <!-- USUARIO -->
+        <div class="input-contenedor">
+            <i class="fas fa-user icon"></i>
+            <input required for="C_usuario" type="text" id="C_usuario" name="C_usuario" placeholder="NOMBRE">
+        </div>
+
+        <!-- CORREO -->
+        <div class="input-contenedor">
+            <i class="fas fa-envelope icon"></i>
+            <input required for="C_correo" requiredtype="email" type="text" id="C_correo" name="C_correo" placeholder="CORREO ELECTRONICO">
+        </div>
+
+        <!-- CONTRASEÑA -->
+        <div class="input-contenedor">
+            <i class="fas fa-key icon"></i>
+            <input required for="C_contraseña" type="password" id="C_contraseña" name="C_contraseña" placeholder="CONTRASEÑA">
+        </div>
+
+        <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+        <div>
+            <button class="button" type="submit"> Registrar </button>
+            <p>¿Ya tienes una cuenta?<a class="link" href="{{ url_for('inicio_2') }}">Iniciar Sesion</a></p>
+        </div>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'layouts/baseinicio.html ' %} {% block title %} inicio_2 {% endblock %} {% block content %}
+
+
+<form action="{{ url_for('inicio_2') }}" method="POST" class="formulario">
+    <h1>Iniciar sesion</h1>
+    <div class="contenedor">
+        <div class="input-contenedor">
+            <i class="fas fa-envelope icon"></i>
+            <input required type="text" for="i_correo" required type="email" id="i_correo" name="i_correo" placeholder="CORREO">
+        </div>
+        <div class="input-contenedor">
+            <i class="fas fa-key icon"></i>
+            <input type="password" for="i_contraseña" requiredtype="password" id="i_contraseña" name="i_contraseña" placeholder="CONTRASEÑA">
+        </div>
+        <p>Al iniciar, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+        <div class="contenedor">
+            <button class="button" type="submit"> Ingresar </button>
+        </div>
+        <p>¿No tienes una cuenta? <a class="link" href="{{ url_for('registrarse') }}">Registrate </a></p>
+    </div>
+</form>
+{% endblock %}

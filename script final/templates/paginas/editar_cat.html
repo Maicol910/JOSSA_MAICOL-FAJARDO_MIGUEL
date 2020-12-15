@@ -1,0 +1,21 @@
+{% extends 'layouts/base.html' %} {% block title %} Editar Categoria {% endblock %} {% block content %}
+<style>
+    #heading {
+        color: #ffffff;
+    }
+</style>
+<form action="{{ url_for('editar_cat') }}" method="POST">
+    <h1 id="heading">Editar categoria</h1>
+    <div class="form-group container" id="contenido2">
+        <label id="heading" for="IDC">ID</label>
+        <input class="form-control" type="text" id="IDC" name="IDC">
+        <label id="heading" for="EditarNombreC">Nombre</label>
+        <input required class="form-control" type="text" id="EditarNombreC" name="EditarNombreC">
+    </div>
+    <center>
+        <button type="submit" class="btn btn-success">Guardar</button>
+        <button class="btn btn-info"><a href="{{ url_for('categorias') }}" >Volver</a></button>
+    </center>
+
+</form>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'layouts/base.html' %} {% block title %} Categorias {% endblock %} {% block content %}
+<style>
+    #heading {
+        color: #ffffff;
+    }
+</style>
+<h1 id="heading">Categorias</h1>
+<div>
+    <button class="btn btn-success"><a href="{{ url_for('crear_cat') }}" >Crear</a></button>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Categoria</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>{% for lista in categorias %}
+        <tr>
+            <td>{{ lista[0] }}</td>
+            <td>{{ lista[1] }}</td>
+            <td>
+                <center>
+                    <button class="btn btn-success"><a href="{{ url_for('editar_cat') }}" >Editar</a></button>
+                    <button class="btn btn-danger"><a href="{{ url_for('eliminar_cat') }}" >Eliminar</a></button>
+                </center>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

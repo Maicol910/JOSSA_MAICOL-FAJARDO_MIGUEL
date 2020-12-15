@@ -1,0 +1,29 @@
+{% extends 'layouts/base.html' %} {% block title %} Editar Usuario {% endblock %} {% block content %}
+<style>
+    #heading {
+        color: #ffffff;
+        width: 50%;
+    }
+</style>
+
+<form action="{{ url_for('editar_usua') }}" method="POST">
+    <center>
+        <h1 id="heading">Editar perfil</h1>
+    </center>
+    <div class="form-group container" id="contenido2">
+        <label id="heading" for="IdP">ID</label>
+        <input type="text" id="IdP" placeholder="Digite (id) a editar..." name="IdP" class="form-control">
+        <label id="heading" for="EditarNombreP">Nombre</label>
+        <input required type="text" id="EditarNombreP" class="form-control" name="EditarNombreP">
+        <label id="heading" for="EditarCorreoP">Correo</label>
+        <input required type="text" id="EditarCorreoP" class="form-control" name="EditarCorreoP">
+        <label id="heading" for="EditarContraseñaP">Contraseña</label>
+        <input type="text" id="EditarContraseñaP" class="form-control" name="EditarContraseñaP">
+    </div>
+    <center>
+        <button type="submit" class="btn btn-success">Guardar</button>
+        <button class="btn"><a href="{{ url_for('usuarios') }}" >Volver</a></button>
+    </center>
+</form>
+
+{% endblock %}

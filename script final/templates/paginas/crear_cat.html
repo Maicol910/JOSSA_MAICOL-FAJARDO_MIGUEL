@@ -1,0 +1,22 @@
+{% extends 'layouts/base.html' %} {% block title %} Crear Categoria {% endblock %} {% block content %}
+<style>
+    #heading {
+        color: #ffffff;
+    }
+</style>
+<form action="{{ url_for('crear_cat') }}" method="POST">
+    <table class="table">
+        <h1 id="heading">Crear Categoria</h1>
+        <div class="form-group container" id="contenido2">
+            <label id="heading" for="NuevaCategoria">Categoria</label>
+            <input class="form-control" type="text" name="NuevaCategoria" id="NuevaCategoria">
+        </div>
+        <center>
+            <button type="submit" class="btn btn-success">Guardar</button>
+            <button class="btn"><a href="{{ url_for('categorias') }}" >Volver</a></button>
+        </center>
+    </table>
+
+</form>
+
+{% endblock %}

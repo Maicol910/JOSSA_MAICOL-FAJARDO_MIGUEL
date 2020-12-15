@@ -1,0 +1,18 @@
+{% extends 'layouts/base.html' %} {% block title %} Eliminar Producto {% endblock %} {% block content %}
+<style>
+    #heading {
+        color: #ffffff;
+    }
+</style>
+<form action="{{ url_for('eliminar_prod') }}" method="POST">
+    <h1 id="heading">Eliminar producto</h1>
+    <div class="form-group  footer-page" id="contenido2">
+        <label id="heading" for="EIDP">ID del producto</label>
+        <input type="text" id="EIDP" name="EIDP">
+    </div>
+    <center>
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <button class="btn btn-info"><a href="{{ url_for('productos') }}" >Volver</a></button>
+    </center>
+</form>
+{% endblock %}
